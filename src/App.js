@@ -3,6 +3,8 @@ import { ToastContainer } from 'react-toastify';
 
 import Enroll from './pages/Enroll';
 import SignIn from './pages/SignIn';
+import Dashboard from './pages/Dashboard';
+import Popular from './pages/Dashboard/Popular';
 
 import { UserProvider } from './contexts/UserContext';
 
@@ -17,6 +19,17 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Enroll />} />
               <Route path="/sign-in" element={<SignIn />} />
+
+              <Route
+                path="/dashboard"
+                element={
+                  <ProtectedRouteGuard>
+                    <Dashboard />
+                  </ProtectedRouteGuard>
+                }
+              >
+                <Route path="popular" element={<Popular />} />
+              </Route>
             </Routes>
           </Router>
         </UserProvider>
