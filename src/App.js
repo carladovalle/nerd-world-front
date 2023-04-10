@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import Enroll from './pages/Enroll';
 import SignIn from './pages/SignIn';
 import Dashboard from './pages/Dashboard';
-import Popular from './pages/Dashboard/Popular';
+import NerdShop from './pages/Dashboard/NerdShop';
 
 import { UserProvider } from './contexts/UserContext';
 
@@ -28,7 +28,7 @@ export default function App() {
                   </ProtectedRouteGuard>
                 }
               >
-                <Route path="popular" element={<Popular />} />
+                <Route path="nerdshop" element={<NerdShop />} />
               </Route>
             </Routes>
           </Router>

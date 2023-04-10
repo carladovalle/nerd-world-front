@@ -17,10 +17,11 @@ export default function NavigationBar() {
 
   return (
     <Container>
-      <Link to="/dashboard/popular">
-        <NavigationButton active={isActive('/dashboard/popular')}>
+
+      <Link to="/dashboard/nerdshop">
+        <NavigationButton active={isActive('/dashboard/nerdshop')}>
           <FaFileContract />
-          <span>Popular</span>
+          <span>nerdshop</span>
         </NavigationButton>
       </Link>
 
@@ -31,8 +32,7 @@ export default function NavigationBar() {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #ddd;
-  box-shadow: 2px 0 10px 0 rgba(0,0,0,0.1);
+  background-color: pink;
   width: 100px;
   flex-shrink: 0;
   justify-content: flex-start;
