@@ -2,15 +2,15 @@ import * as Accordion from '@radix-ui/react-accordion';
 import styled, { keyframes } from 'styled-components';
 import { BsChevronRight } from 'react-icons/bs';
 
-import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { getCategories } from '../../services/categoriesApi';
 
-export function Categories() {
+export function HamburgerMenu ({hidden, setHidden}) {
   const navigate = useNavigate(); 
   const [data, setData] = useState([]); 
-
+  
   useEffect(() => {
     const promise = getCategories();
     promise.then((res => {
@@ -19,12 +19,27 @@ export function Categories() {
       alert('An error occurred while trying to fetch the data, please refresh the page');
     });
   }, []);
-  
+
   return (
-    <Wrapper>
-      <h1>Navegue</h1>
-      <Container>
-      <Accordion.Root className="AccordionRoot" type="single" defaultValue="item-1" collapsible>
+    <Container>
+      <Background hidden={hidden} onClick={()=> setHidden(true)}/>
+      <Menu hidden={hidden}>      
+        <Accordion.Root className="AccordionRoot" type="single" defaultValue="item-1" collapsible>
+          <Accordion.Item className="AccordionItem" value="item-1">
+            <Accordion.Trigger className="AccordionTrigger">
+              <div>New Arrivals</div> 
+              <BsChevronRight className="CaretDown" aria-hidden/>
+            </Accordion.Trigger>
+            <Accordion.Content className="AccordionContent">
+              <ul>
+                <li>New Arrivals</li>
+                <li>New Arrivals</li>
+                <li>New Arrivals</li>
+                <li>New Arrivals</li>
+              </ul>
+            </Accordion.Content>
+          </Accordion.Item>
+
           {
             data.map((category, index) => (
               <Accordion.Item key={category.id} className="AccordionItem" value={`item-${index+2}`} onClick={() => {navigate(`${category.id}`, {state: { name: category.name }})}}>
@@ -36,68 +51,12 @@ export function Categories() {
             ))
           }
 
-        </Accordion.Root>     
-      </Container>
-    </Wrapper>
+        </Accordion.Root>
+      </Menu>
+    </Container> 
   );
 }
 
-const Wrapper = styled.div`
-  width: 100%;
-  min-height: 60vh;
-  padding: 5vh 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  font-family: 'Raleway', sans-serif;
-  h1 {
-    font-size: 2em;
-    line-height: 3em;
-    font-weight: 500;
-    color: #76C352;
-  }
-`;
-
-const Container = styled.div`
-  width: 95%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-`;
-
-const Category = styled.div`
-  width: 200px;
-  height: 160px;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  cursor: pointer;
-  transition: all 250ms ease;
-  background: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.5));
-  background-position: center;
-  background-size: cover;
-  
-  border-radius: 20px;
-  border: 3px solid #F5FAD1;
-  :hover{
-    border: 3px solid #76C352;
-    filter: brightness(1.2);
-    h2 {
-      font-weight: 700;
-    }
-  }
-  h2 {
-    color: #F5FAD1;;
-    font-size: 26px;
-    font-weight: 600;
-    text-shadow: black 0.1em 0.1em 0.2em;
-    transition: all 500ms ease;
-  }
-`;
 const slideDown = keyframes`
  100% { height: 0 }
  0% { height: var(--radix-accordion-content-height) }
@@ -106,6 +65,18 @@ const slideDown = keyframes`
 const slideUp = keyframes`
  0% {  height: var(--radix-accordion-content-height) }
  100% { height: 0 }
+`;
+
+const Container = styled.div`
+  position: fixed;
+  display: flex;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  button,
+  h3 {
+    all: unset;
+  }
 `;
 
 const Background = styled.div`
