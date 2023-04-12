@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 
 import NavigationBar from '../../components/Dashboard/NavigationBar';
+import { Footer } from '../../components/Footer/Footer';
 
 import DashboardLayout from '../../layouts/Dashboard';
 
@@ -13,6 +14,7 @@ export default function Dashboard() {
 
       <Container>
         <Outlet />
+        <Footer />
       </Container>
     </DashboardLayout>
   );
