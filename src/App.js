@@ -5,6 +5,7 @@ import Enroll from './pages/Enroll';
 import SignIn from './pages/SignIn';
 import Dashboard from './pages/Dashboard';
 import NerdShop from './pages/Dashboard/NerdShop';
+import Home from './pages/Dashboard/Home';
 
 import { UserProvider } from './contexts/UserContext';
 
@@ -13,7 +14,6 @@ import useToken from './hooks/useToken';
 export default function App() {
   return (
     <>
-      <ToastContainer />
         <UserProvider>
           <Router>
             <Routes>
@@ -29,6 +29,7 @@ export default function App() {
                 }
               >
                 <Route path="nerdshop" element={<NerdShop />} />
+                <Route path="home" element={<Home />} />
               </Route>
             </Routes>
           </Router>

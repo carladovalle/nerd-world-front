@@ -25,6 +25,13 @@ export default function NavigationBar() {
         </NavigationButton>
       </Link>
 
+      <Link to="/dashboard/home">
+        <NavigationButton active={isActive('/dashboard/home')}>
+          <FaFileContract />
+          <span>home</span>
+        </NavigationButton>
+      </Link>
+
     </Container>
   );
 }
