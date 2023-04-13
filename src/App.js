@@ -6,6 +6,7 @@ import SignIn from './pages/SignIn';
 import Dashboard from './pages/Dashboard';
 import NerdShop from './pages/Dashboard/NerdShop';
 import Home from './pages/Dashboard/Home';
+import {Products} from './pages/Dashboard/Products/Products';
 
 import { UserProvider } from './contexts/UserContext';
 
@@ -30,6 +31,7 @@ export default function App() {
               >
                 <Route path="nerdshop" element={<NerdShop />} />
                 <Route path="home" element={<Home />} />
+                <Route path=":categoryId" element={<Products />} />
               </Route>
             </Routes>
           </Router>
