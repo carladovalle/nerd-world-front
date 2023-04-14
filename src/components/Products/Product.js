@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 
-export default function Product({ index, name, image, selected, handleSelectProduct }) {
+import { useNavigate } from 'react-router-dom';
+
+export default function Product({ index, id, product, name, image }) {
+
+  const navigate = useNavigate();
 
   return (
     <ProductPage>
-      <Container selected={selected} index={index} onClick={handleSelectProduct}>
+      <Container index={index} onClick={() => navigate(`/dashboard/home/product/${id}`, {state: { product: product }})}>
         <img src={image} alt="product" />
         <div className="name">{name}</div>
       </Container>

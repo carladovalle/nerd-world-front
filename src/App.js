@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
 
 import Enroll from './pages/Enroll';
 import SignIn from './pages/SignIn';
 import Dashboard from './pages/Dashboard';
 import NerdShop from './pages/Dashboard/NerdShop';
 import Home from './pages/Dashboard/Home';
-import {Products} from './pages/Dashboard/Products/Products';
+import { Products } from './pages/Dashboard/Products/Products';
+import { ProductPage } from './pages/Dashboard/Products/ProductPage';
 
 import { UserProvider } from './contexts/UserContext';
 
@@ -32,6 +32,7 @@ export default function App() {
                 <Route path="nerdshop" element={<NerdShop />} />
                 <Route path="home" element={<Home />} />
                 <Route path=":categoryId" element={<Products />} />
+                <Route path="product/:productId" element={<ProductPage />} />
               </Route>
             </Routes>
           </Router>

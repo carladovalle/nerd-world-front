@@ -4,7 +4,7 @@ import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import { useRef } from 'react';
 import useProducts from '../../hooks/api/useProducts';
 import useProductById from '../../hooks/api/useProductById'
-import Product from './Product';
+import Product from '../Products/Product';
 
 export function BestSellers() {
 
