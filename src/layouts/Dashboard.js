@@ -17,7 +17,7 @@ const StyledContainer = styled(Container)`
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
-  flex-direction: row;
+  flex-direction: column;
   padding: 0;
   
   & > * {

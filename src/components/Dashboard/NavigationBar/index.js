@@ -18,10 +18,10 @@ export default function NavigationBar() {
   return (
     <Container>
 
-      <Link to="/dashboard/nerdshop">
-        <NavigationButton active={isActive('/dashboard/nerdshop')}>
+      <Link to="/dashboard/about">
+        <NavigationButton active={isActive('/dashboard/about')}>
           <FaFileContract />
-          <span>nerdshop</span>
+          <span>about</span>
         </NavigationButton>
       </Link>
 

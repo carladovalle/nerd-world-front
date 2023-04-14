@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export default function NerdShop() {
+export default function About() {
 
     return (
         <>

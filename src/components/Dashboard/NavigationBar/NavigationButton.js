@@ -17,7 +17,7 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   ${props => props.active ? 'background-color: #ccc;' : ''}
   &:hover {
     background-color: #ccc;

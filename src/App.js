@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Enroll from './pages/Enroll';
 import SignIn from './pages/SignIn';
 import Dashboard from './pages/Dashboard';
-import NerdShop from './pages/Dashboard/NerdShop';
+import About from './pages/Dashboard/About';
 import Home from './pages/Dashboard/Home';
 import { Products } from './pages/Dashboard/Products/Products';
 import { ProductPage } from './pages/Dashboard/Products/ProductPage';
@@ -29,7 +29,7 @@ export default function App() {
                   </ProtectedRouteGuard>
                 }
               >
-                <Route path="nerdshop" element={<NerdShop />} />
+                <Route path="about" element={<About />} />
                 <Route path="home" element={<Home />} />
                 <Route path=":categoryId" element={<Products />} />
                 <Route path="product/:productId" element={<ProductPage />} />
