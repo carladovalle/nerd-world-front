@@ -7,6 +7,8 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 
 import { HamburgerMenu } from './HamburgerMenu';
 
+import { SearchBar } from '../SearchBar/SearchBar';
+
 export function Navbar () {
   const navigate = useNavigate();
   const [hidden, setHidden] = useState(true);
@@ -25,8 +27,15 @@ export function Navbar () {
           </h1>
         </div> 
 
-        
+        <div className='searchBar'>
+          <SearchBar />
+        </div>
+
       </Container>
+
+      <div className='searchBar-mobile'>
+        <SearchBar />
+      </div>
 
       <HamburgerMenu hidden={hidden} setHidden={setHidden}/> 
 
