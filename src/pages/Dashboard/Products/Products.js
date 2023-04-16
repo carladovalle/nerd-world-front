@@ -5,25 +5,25 @@ import { useState, useEffect } from 'react';
 
 import { Product } from '../../../components/Products/Products';
 
-import { getCategoryById } from '../../../services/categoriesApi';
+import { getProductsByType} from '../../../services/productsApi';
 
 export function Products () {
   const params = useParams();
-  const categoryId = params.categoryId;
+  const typeId = params.typeId;
 
   const { name } =  useLocation().state;
 
   const [data, setData] = useState([]);
 
-   useEffect(() => {
-      const promise = getCategoryById(categoryId);
-      promise.then((res => {
-        setData(res);
-      })).catch(()=>{
-        alert('An error occurred while trying to fetch the data, please refresh the page');
-      });
-    }, [categoryId]);
-    console.log(data);
+  useEffect(() => {
+    const promise = getProductsByType(typeId);
+    promise.then((res => {
+      setData(res);
+    })).catch(()=>{
+      alert('An error occurred while trying to fetch the data, please refresh the page');
+    });
+  }, [typeId]);
+  console.log(data);
 
   return (
     <>
@@ -34,7 +34,7 @@ export function Products () {
           :
           <Container>
             {
-              data.Products.map(product => (
+              data.map(product => (
                 <Product 
                   key={product.id}
                   product={product}

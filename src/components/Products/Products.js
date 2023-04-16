@@ -6,8 +6,26 @@ export function Product({ product }) {
   const navigate = useNavigate();
 
   return (
-    <ProductCard>
-      {product.name}
+    <ProductCard 
+      soldOut={product.stock === 0 ? true : false}
+    >
+      <img 
+        src={product.image} alt="" 
+        onClick={() => navigate(`/dashboard/product/${product.id}`, {state: { product: product }})}
+      />
+      <p onClick={() => navigate(`/dashboard/product/${product.id}`, {state: { product: product }})}>
+        {product.name}
+      </p>
+      <div>
+        <span>$ {product.price/100}</span>
+        <BsPlusCircle 
+          className='plus'
+        />
+      </div>
+
+      <SoldOut soldOut={product.stock === 0 ? true : false}>
+        <h2> SOLD OUT </h2>
+      </SoldOut>
     </ProductCard>
   );
 }

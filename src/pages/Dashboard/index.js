@@ -14,9 +14,11 @@ export default function Dashboard() {
     <DashboardLayout>
       <Navbar />
       <SubNavBar />
+
       <Container>
         <Outlet />
       </Container>
+
       <Footer />
     </DashboardLayout>
   );

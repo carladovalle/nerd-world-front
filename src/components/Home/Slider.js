@@ -11,6 +11,7 @@ export function Slider() {
 }
 
 const Wrapper = styled.div`
+  margin-top: 80px;
   .slideshow {
       max-width: 100%;
       height: 80vh;

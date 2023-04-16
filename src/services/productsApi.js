@@ -10,12 +10,21 @@ export async function getProducts(token) {
   return response.data;
 }
 
-export async function getProductById(productId, token) {
+/*export async function getProductById(productId, token) {
   const response = await api.get(`/products/${productId}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
 
+  return response.data;
+}*/
+
+export async function getProductsByType(typeId, token) {
+  const response = await api.get(`/products/${typeId}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
   return response.data;
 }

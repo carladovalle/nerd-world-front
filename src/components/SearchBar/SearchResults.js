@@ -29,7 +29,7 @@ export function SearchResults({ products, hidden }) {
                   <H2 onClick={() => navigate(`product/${product.id}`, {state: { product: product }})}>
                     {product.name}
                   </H2>
-                  <Span>${product.price}</Span>
+                  <Span>${product.price/100}</Span>
                 </div>
                 </InfoContainer>
             </Container>

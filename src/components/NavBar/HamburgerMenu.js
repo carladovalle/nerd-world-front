@@ -47,6 +47,7 @@ export function HamburgerMenu ({hidden, setHidden}) {
                   <div>{category.name}</div> 
                   <BsChevronRight className="CaretDown" aria-hidden/>
                 </Accordion.Trigger>
+        
               </Accordion.Item>
             ))
           }

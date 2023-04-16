@@ -3,40 +3,48 @@ import styled, { keyframes } from 'styled-components';
 import { BsChevronRight } from 'react-icons/bs';
 
 import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 
-import { getCategories } from '../../services/categoriesApi';
+const categories = [
+  {
+    name: 'Vestuário',
+    image: 'a',
+    id: 1
+  },
+  {
+    name: 'Decoração',
+    image: 'a',
+    id: 2
+  },
+  {
+    name: 'Presentes',
+    image: 'a',
+    id: 3
+  },
+  {
+    name: 'Cozinha',
+    image: 'a',
+    id: 4
+  }
+];
 
 export function Categories() {
   const navigate = useNavigate(); 
-  const [data, setData] = useState([]); 
-
-  useEffect(() => {
-    const promise = getCategories();
-    promise.then((res => {
-      setData(res);
-    })).catch(()=>{
-      alert('An error occurred while trying to fetch the data, please refresh the page');
-    });
-  }, []);
   
   return (
     <Wrapper>
       <h1>Navegue</h1>
       <Container>
-      <Accordion.Root className="AccordionRoot" type="single" defaultValue="item-1" collapsible>
-          {
-            data.map((category, index) => (
-              <Accordion.Item key={category.id} className="AccordionItem" value={`item-${index+2}`} onClick={() => {navigate(`${category.id}`, {state: { name: category.name }})}}>
-                <Accordion.Trigger className="AccordionTrigger">
-                  <div>{category.name}</div> 
-                  <BsChevronRight className="CaretDown" aria-hidden/>
-                </Accordion.Trigger>
-              </Accordion.Item>
-            ))
-          }
-
-        </Accordion.Root>     
+      {
+          categories.map((category) => (
+            <Category 
+              key={category.name}
+              image={category.image}
+              onClick={() => navigate(`${category.id}`, {state: { name: category.name }})}
+            >
+              <h2>{category.name}</h2>
+            </Category>
+          ))
+        }      
       </Container>
     </Wrapper>
   );
