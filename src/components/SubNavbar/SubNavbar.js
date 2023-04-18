@@ -20,24 +20,10 @@ export function SubNavBar() {
       alert('An error occurred while trying to fetch the data, please refresh the page');
     });
   }, []); 
-
+  
   return (
     <Root>
       <List>
-        <NavigationMenu.Item>
-          <Trigger>
-            New Arrivals <CaretDown className="CaretDown" aria-hidden />
-          </Trigger>
-          <Content className="NavigationMenuContent">
-            <ul>
-              <li>New Arrivals</li>
-              <li>New Arrivals</li>
-              <li>New Arrivals</li>
-              <li>New Arrivals</li>
-            </ul>
-          </Content>
-        </NavigationMenu.Item>
-       
         { data &&
           data.map(category => (
             <NavigationMenu.Item key={category.id}>
@@ -89,7 +75,7 @@ const Root = styled(NavigationMenu.Root)`
   justify-content: center;
   z-index: 1;
   font-family: 'Raleway', sans-serif;
-  background-color: #F5FAD1;
+  background-color: #dee2e6;
   position: relative;
   top: 10vh;
   margin-bottom: 50px;
@@ -127,7 +113,7 @@ const Trigger = styled(NavigationMenu.Trigger)`
   padding: 8px 12px;
   gap: 2px;
   font-size: 18px;
-  color: #FF724C;
+  color: #212529;
   font-family: 'Raleway', sans-serif;
   :hover {
     font-weight: 700;
@@ -140,8 +126,8 @@ const Trigger = styled(NavigationMenu.Trigger)`
 const Content = styled(NavigationMenu.Content)`
   padding: 5px;
   font-family: 'Raleway', sans-serif;
-  color: #FF724C;
-  background-color: #F5FAD1;
+  color: #6c757d;
+  background-color: #dee2e6;
   z-index: 2;
   animation-duration: 250ms;
   animation-timing-function: ease;
@@ -152,11 +138,11 @@ const Content = styled(NavigationMenu.Content)`
     line-height: 22px;
     cursor: pointer;
     a {
-      color: #FF724C;
+      color: #dee2e6;
     }
     :hover {
       font-weight: 600;
-      background-color: rgba(118, 195, 82, .1);
+      background-color: #f8f9fa;
     }
   }
 `;
@@ -179,7 +165,7 @@ const Indicator = styled(NavigationMenu.Indicator)`
   .Arrow {
     position: relative;
     top: 70%;
-    background-color: #F5FAD1;
+    background-color: #495057;
     width: 10px;
     height: 10px;
     transform: rotate(45deg);
@@ -204,7 +190,7 @@ const Viewport = styled(NavigationMenu.Viewport)`
   overflow: hidden;
   height: var(--radix-navigation-menu-viewport-height);
   transition: width, height, 300ms ease;
-  background-color:  #F5FAD1;
+  background-color:  #ced4da;
   &&[data-state='open'] {
     animation-name: ${scaleIn};
     animation-duration: 200ms;

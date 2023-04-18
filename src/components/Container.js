@@ -4,7 +4,7 @@ export default styled.div`
   height: 100vh;
   width: 100%;
   border-radius: 20px;
-  background-color: #fff;
+  background-color: #f8f9fa;
 
   display: flex;
   overflow: hidden;

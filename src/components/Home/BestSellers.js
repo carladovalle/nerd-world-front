@@ -3,37 +3,19 @@ import { useEffect, useState } from 'react';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import { useRef } from 'react';
 import useProducts from '../../hooks/api/useProducts';
-import useProductById from '../../hooks/api/useProductById'
 import Product from '../Products/Product';
 
 export function BestSellers() {
 
-  const [selectedProduct, setSelectedProduct] = useState(0);
   const [products, setProducts] = useState([]);
-  const [choosedProduct, setChoosedProduct] = useState([]);
+
 
   const { getProducts } = useProducts();
-  const { getProductById } = useProductById(selectedProduct);
-
-  const handleSelectProduct = (product) => {
-    if (product.id === selectedProduct) {
-      setSelectedProduct(0);
-    } else {
-      setSelectedProduct(product.id);
-    }
-  };
 
   useEffect(async () => {
     const data = await getProducts();
     setProducts(data);
   }, []);
-
-  useEffect(() => {
-    const promisse = getProductById(selectedProduct);
-    promisse.then((p) => {
-      if (p) setChoosedProduct(p);
-    });
-  }, [selectedProduct]);
 
   const carousel = useRef(null);
  
@@ -53,7 +35,7 @@ export function BestSellers() {
 
   return(
     <Wrapper>
-      <h1>Best sellers</h1>
+      <h1>Mais vendidos</h1>
       <ProductsBrowser>
         <BsChevronLeft className="scroll" onClick={handleLeftClick}/>
         <Carousel ref={carousel}>
@@ -64,8 +46,6 @@ export function BestSellers() {
                 index={index}
                 name={product.name}
                 image={product.image}
-                selected={product.id === selectedProduct}
-                handleSelectProduct={() => handleSelectProduct(product)}
               />
             ))
           ) : (
@@ -90,7 +70,7 @@ const Wrapper = styled.div`
     font-size: 2em;
     line-height: 3em;
     font-weight: 500;
-    color: #76C352;
+    color: #495057;
   }
 `;
 
@@ -103,6 +83,7 @@ const ProductsBrowser = styled.div`
   width: 100%;
   flex-wrap: wrap;
 `;
+
 const Carousel = styled.div`
   margin: 0 10px;
   overflow-x: hidden;

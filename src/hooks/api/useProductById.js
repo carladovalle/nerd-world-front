@@ -1,4 +1,4 @@
-/*import useAsync from '../useAsync';
+import useAsync from '../useAsync';
 import useToken from '../useToken';
 
 import * as productApi from '../../services/productsApi';
@@ -19,4 +19,4 @@ export default function useProductById(productId) {
     productByIdError,
     getProductById,
   };
-}*/
+}

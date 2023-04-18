@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 
 import { Product } from '../../../components/Products/Products';
 
-import { getProductsByType} from '../../../services/productsApi';
+import { getProductsByType } from '../../../services/productsApi';
 
 export function Products () {
   const params = useParams();
@@ -27,10 +27,10 @@ export function Products () {
 
   return (
     <>
-      <H1>{name}</H1>
+      <h1>{name}</h1>
       {
         data.length === 0 ?
-          <H2>Coming soon.</H2>
+          <h2>Em breve.</h2>
           :
           <Container>
             {
@@ -47,7 +47,7 @@ export function Products () {
   );
 }
 
-const H1 = styled.h1`
+const h1 = styled.h1`
   margin-top: 35px;
   text-align: center;
   font-size: 2em;
@@ -56,14 +56,14 @@ const H1 = styled.h1`
   color: #FF724C;
 `;
 
-const H2 = styled.h2`
+const h2 = styled.h2`
   text-align: center;
   font-size: 18px;
   color: #FF724C;
 `;
 
 const Container = styled.div`
-  width: 95%;
+  width: 55%;
   align-self: center;
   display: flex;
   flex-wrap: wrap;

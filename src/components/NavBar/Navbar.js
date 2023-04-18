@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { RxHamburgerMenu } from 'react-icons/rx';
 
 import { HamburgerMenu } from './HamburgerMenu';
+import { MenuBar } from './MenuBar';
 
 import { SearchBar } from '../SearchBar/SearchBar';
 
@@ -31,6 +32,8 @@ export function Navbar () {
           <SearchBar />
         </div>
 
+        <MenuBar />
+
       </Container>
 
       <div className='searchBar-mobile'>
@@ -52,26 +55,26 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   z-index: 2;
-  color: #FF724C;
+  color: #f8f9fa;
   font-family: 'Raleway', sans-serif;
-  background-color: #F5FAD1;
+  background-color: #adb5bd;
   position: fixed;
   top: 0;
   input {
-  width: 90%;
-  padding: 6px 8px;
-  font-size: 18px;
-  border: none;
-  border-radius: 5px;
-  background: rgba(118, 195, 82, .1);
-  color: #083316;
-  font-family: 'Raleway', sans-serif;
-    ::placeholder {
-      color: #76C352;
-    }
-    :focus {
-      border: 1px solid #76C352;
-    }
+    width: 70%;
+    padding: 6px 8px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background: #f8f9fa;
+    color: #083316;
+    font-family: 'Raleway', sans-serif;
+      ::placeholder {
+        color: #dee2e6;
+      }
+      :focus {
+        border: 1px solid #dee2e6;
+      }
   }
 .searchBar {
   @media (max-width: 850px) {

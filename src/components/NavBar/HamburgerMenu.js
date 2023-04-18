@@ -25,33 +25,16 @@ export function HamburgerMenu ({hidden, setHidden}) {
       <Background hidden={hidden} onClick={()=> setHidden(true)}/>
       <Menu hidden={hidden}>      
         <Accordion.Root className="AccordionRoot" type="single" defaultValue="item-1" collapsible>
-          <Accordion.Item className="AccordionItem" value="item-1">
-            <Accordion.Trigger className="AccordionTrigger">
-              <div>New Arrivals</div> 
-              <BsChevronRight className="CaretDown" aria-hidden/>
-            </Accordion.Trigger>
-            <Accordion.Content className="AccordionContent">
-              <ul>
-                <li>New Arrivals</li>
-                <li>New Arrivals</li>
-                <li>New Arrivals</li>
-                <li>New Arrivals</li>
-              </ul>
-            </Accordion.Content>
-          </Accordion.Item>
-
           {
             data.map((category, index) => (
-              <Accordion.Item key={category.id} className="AccordionItem" value={`item-${index+2}`} onClick={() => {navigate(`${category.id}`, {state: { name: category.name }})}}>
+              <Accordion.Item key={category.id} className="AccordionItem" value={`item-${index+2}`}>
                 <Accordion.Trigger className="AccordionTrigger">
                   <div>{category.name}</div> 
                   <BsChevronRight className="CaretDown" aria-hidden/>
                 </Accordion.Trigger>
-        
               </Accordion.Item>
             ))
           }
-
         </Accordion.Root>
       </Menu>
     </Container> 
@@ -98,12 +81,12 @@ const Menu = styled.div`
   transition: all 0.4s;
   z-index: 3;
   
-  background-color: #F5FAD1;
+  background-color: #adb5bd;
   position: fixed;
   left: ${props => props.hidden ? '-60vw' : '0'};
   .AccordionItem {
     padding: 10px;
-    border-bottom: 1px solid rgba(255, 114, 76, .3);
+    border-bottom: 1px solid white;
     overflow: hidden;
     cursor: pointer;
   }

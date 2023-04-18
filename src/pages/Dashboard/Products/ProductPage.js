@@ -10,10 +10,10 @@ export function ProductPage() {
       <Image image={product.image}></Image>
 
       <Description>
-        <h1>{product.name}</h1>
+        <H1>{product.name}</H1>
         <P>{product.description}</P>
-        <Price>${product.price}</Price>
-        <Button>Buy Now</Button>
+        <Price>R$ {product.price/100}</Price>
+        <Button>Eu quero</Button>
       </Description>      
     </Wrapper>
   );
@@ -34,17 +34,18 @@ const Description = styled.div`
   padding: 50px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   @media (max-width: 850px) {
     width: 100%;
     padding: 20px;
   }
 `;
 
-const h1 = styled.h1`
+const H1 = styled.h1`
   text-align: center;
   font-size: 2em;
   line-height: 2em;
-  font-weight: 500;
+  font-weight: 700;
   @media (max-width: 850px) {
     line-height: 1;
   }
@@ -52,14 +53,14 @@ const h1 = styled.h1`
 
 const P = styled.p`
   margin-top: 20px;
-  font-size: 1.2em;
+  font-size: 1.0em;
   line-height: 1.2em;
 `;
 
 const Price = styled.span`
   padding: 20px 0;
-  font-size: 3em;
-  font-weight: 500;
+  font-size: 1em;
+  font-weight: 400;
 `;
 
 const Button = styled.button`
@@ -71,7 +72,7 @@ const Button = styled.button`
   font-weight: 500;
   border: none;
   font-family: 'Raleway', sans-serif;
-  background-image: linear-gradient( to right, #083316, #76C352);
+  background-image: linear-gradient( to right, #495057, #ced4da);
   cursor: pointer; 
   
   &:hover {

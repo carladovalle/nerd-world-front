@@ -6,6 +6,9 @@ import Dashboard from './pages/Dashboard';
 import Home from './pages/Dashboard/Home';
 import { Products } from './pages/Dashboard/Products/Products';
 import { ProductPage } from './pages/Dashboard/Products/ProductPage';
+import { Cart } from './pages/Dashboard/Cart/Cart';
+import { Payment } from './pages/Dashboard/Payment/Payment';
+import { Success } from './pages/Dashboard/Success/Success';
 
 import { UserProvider } from './contexts/UserContext';
 
@@ -29,6 +32,10 @@ export default function App() {
                 <Route path="home" element={<Home />} />
                 <Route path="home/:typeId" element={<Products />} />
                 <Route path=':typeId/:productId' element={<ProductPage/>} /> 
+
+                <Route path='home/cart' element={<Cart />} />
+                <Route path='home/payment' element={<Payment />} />
+                <Route path='home/success' element={<Success />} />
               </Route>
             </Routes>
           </Router>

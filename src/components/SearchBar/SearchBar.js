@@ -52,7 +52,7 @@ export function SearchBar() {
           minLength={3}
           debounceTimeout={300}
           type='text'
-          placeholder='O que você está procurando?'
+          placeholder='Pesquisar'
           value={keyword} 
           onChange={(e) => {
             setKeyword(e.target.value);
@@ -85,14 +85,14 @@ const Input = styled(DebounceInput)`
   font-size: 18px;
   border: none;
   border-radius: 5px;
-  background: rgba(118, 195, 82, .1);
-  color: #083316;
+  background: #f8f9fa;
+  color: #f8f9fa;
   font-family: 'Raleway', sans-serif;
   ::placeholder {
-  color: #76C352;
+  color: #343a40;
   }
   :focus {
-    border: 1px solid #76C352;
+    border: 1px solid #f8f9fa;
   }
 `;
 

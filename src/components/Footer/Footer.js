@@ -4,21 +4,21 @@ export function Footer() {
   return(
     <Wrapper>
       <h1>Nerd World</h1>
-      <p><span>E-mail: </span>nerd-universe@geek.com</p>
+      <p><span>Contato: </span>nerd-universe@geek.com</p>
     </Wrapper>
   );
 }
 
 const Wrapper = styled.div`
   max-width: 100vw;
-  height: 30vh;
+  height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: 'Raleway', sans-serif;
   
-  background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.5));
+  background: #343a40;
   background-position: center;
   background-size: cover;
   h1, p {
@@ -27,12 +27,12 @@ const Wrapper = styled.div`
   }
   h1 {
     text-align: center;
-    font-size: 48px;
+    font-size: 24px;
     padding-bottom: 20px;
     font-weight: 500;
   }
   p {
-    font-size: 18px;
+    font-size: 12px;
   }
   span {
     font-weight: bold;

@@ -12,7 +12,7 @@ export function Benefits() {
       </div>
       <div>
         <FaTruck className='icon' />
-        <p>frete grátis acima de R$ 300,00</p>
+        <p>frete grátis</p>
       </div>
     </Wrapper>
   );

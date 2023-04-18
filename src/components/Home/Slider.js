@@ -1,17 +1,89 @@
 import styled from 'styled-components';
 import { useState, useEffect, useRef } from 'react';
 
-export function Slider() {    
+import est from '../../assets/img/pant.webp';
+import dec from '../../assets/img/lu.webp';
+import pre from '../../assets/img/f.webp';
+
+export function Slider() {
+  const images = 
+  [
+    {
+      'image': est,
+      'title': 'Produtos exclusivos'
+    },
+    {
+      'image': dec,
+      'title': 'Decore a sua casa'
+    },
+    {
+      'image': pre,
+      'title': 'Presentes criativos'
+    }
+  ];   
+
+  const [index, setIndex] = useState(0);
+  const timeoutRef = useRef(null);
+  const delay = 5000;
+
+  function resetTimeout() {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  }
+
+  useEffect(() => {
+    resetTimeout();
+    timeoutRef.current = setTimeout(
+      () =>
+        setIndex((prevIndex) =>
+          prevIndex === images.length - 1 ? 0 : prevIndex + 1
+        ),
+      delay
+    );
+
+    return () => {
+      resetTimeout();
+    };
+  }, [index]);
+    
 
   return(
     <Wrapper>           
-      Slider
+      <div className="slideshow">
+        <div
+          className="slideshowSlider"
+          style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
+        >
+          {images.map((image, idx) => (
+            <Slide
+              key={idx}
+              image = {image.image}
+            >
+              <TextBox>
+                <H1>{image.title}</H1>
+              </TextBox>
+            </Slide>
+          ))}
+        </div>
+
+        <div className="slideshowDots">
+          {images.map((_, idx) => (
+            <div
+              key={idx}
+              className={`slideshowDot${index === idx ? ' active' : ''}`}
+              onClick={() => {
+                setIndex(idx);
+              }}
+            ></div>
+          ))}
+        </div>
+      </div>       
     </Wrapper>
   );
 }
 
 const Wrapper = styled.div`
-  margin-top: 80px;
   .slideshow {
       max-width: 100%;
       height: 80vh;
@@ -41,11 +113,11 @@ const Wrapper = styled.div`
     border-radius: 50%;
     cursor: pointer;
     margin: 15px 7px 0px;
-    background-color: #c4c4c4;
+    background-color: #f8f9fa;
     opacity: .5;
   }
   .slideshowDot.active {
-    background-color: #FF724C;
+    background-color: #ced4da;
     opacity: 1;
   }
 `;
@@ -63,17 +135,17 @@ const Slide = styled.div`
 `;
 
 const TextBox = styled.div`
-  padding: 20px;
+  padding: 10px;
   background-color: rgba(12, 12, 12, .5);
   word-wrap: break-word;
   position: absolute;
-  bottom: 100px;
+  bottom: 80px;
 `;
 
 const H1 = styled.h1`
-  font-size: 4vw;
+  font-size: 2vw;
   font-weight: 700;
-  color:  #FF724C;
+  color:  #f8f9fa;
   @media (max-width: 850px) {
     font-size: 6vw;
   }

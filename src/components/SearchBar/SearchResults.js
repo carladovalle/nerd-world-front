@@ -29,7 +29,7 @@ export function SearchResults({ products, hidden }) {
                   <H2 onClick={() => navigate(`product/${product.id}`, {state: { product: product }})}>
                     {product.name}
                   </H2>
-                  <Span>${product.price/100}</Span>
+                  <Span>R$ {product.price/100}</Span>
                 </div>
                 </InfoContainer>
             </Container>
@@ -46,7 +46,7 @@ const Wrapper = styled.div`
   padding: 20px;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background-color:#F5FAD1;
+  background-color: #ced4da;
   visibility: ${props => props.hidden ? 'hidden' : 'visible'};
   
   position: absolute;  
@@ -85,7 +85,7 @@ const H2 = styled.h2`
 `;
 
 const Span = styled.span`
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 500;
 `;
 
@@ -94,20 +94,4 @@ const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-`;
-
-const Button = styled.button`
-  width: 90px;
-  height: 30px;
-  border-radius: 20px;
-  font-size: 16px;
-  font-weight: 500;
-  border: none;
-  color: #F5FAD1;
-  background-image: linear-gradient( to right, #083316, #76C352);
-  cursor: pointer; 
-  
-  &:hover {
-    opacity: .8;
-  }
 `;
