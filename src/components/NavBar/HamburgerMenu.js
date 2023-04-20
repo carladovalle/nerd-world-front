@@ -32,6 +32,23 @@ export function HamburgerMenu ({hidden, setHidden}) {
                   <div>{category.name}</div> 
                   <BsChevronRight className="CaretDown" aria-hidden/>
                 </Accordion.Trigger>
+                <Accordion.Content className="AccordionContent">
+                  <ul>
+                    {
+                      category.Types.map(type => (
+                        <li 
+                          key={type.id}
+                          onClick={() => {
+                            setHidden(true);
+                          }}
+                        >
+                          {type.name}
+                        
+                        </li>
+                      ))
+                    }                    
+                  </ul>
+                </Accordion.Content>
               </Accordion.Item>
             ))
           }

@@ -20,7 +20,7 @@ export function SubNavBar() {
       alert('An error occurred while trying to fetch the data, please refresh the page');
     });
   }, []); 
-  
+  console.log(data);
   return (
     <Root>
       <List>
@@ -30,6 +30,19 @@ export function SubNavBar() {
               <Trigger>
                 {category.name}<CaretDown className="CaretDown" aria-hidden />
               </Trigger>
+              <Content className="NavigationMenuContent">
+                <ul>
+                  {
+                    category.Types.map(type => (
+                      <li 
+                        key={type.id} 
+                      >                        
+                        {type.name}                        
+                      </li>
+                    ))
+                  }                    
+                </ul>
+              </Content>
             </NavigationMenu.Item>
           ))
         } 
