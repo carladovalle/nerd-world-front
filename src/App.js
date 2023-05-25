@@ -23,20 +23,39 @@ export default function App() {
               <Route path="/" element={<Enroll />} />
               <Route path="/sign-in" element={<SignIn />} />
 
-              <Route path="/dashboard" element={
-                  <ProtectedRouteGuard>
-                    <Dashboard />
-                  </ProtectedRouteGuard>
-                }
-              >
+              <Route path="/dashboard" element={<Dashboard />}>
                 <Route path="home" element={<Home />} />
                 <Route path="home/:typeId" element={<Products />} />
                 <Route path=':typeId/:productId' element={<ProductPage/>} /> 
-
-                <Route path='home/cart' element={<Cart />} />
-                <Route path='home/payment' element={<Payment />} />
-                <Route path='home/success' element={<Success />} />
               </Route>
+
+
+              <Route 
+                path='cart' 
+                element={
+                  <ProtectedRouteGuard>
+                    <Cart />
+                  </ProtectedRouteGuard>
+                } 
+              />
+
+              <Route 
+                path='payment' 
+                element={
+                  <ProtectedRouteGuard>
+                    <Payment />
+                  </ProtectedRouteGuard>
+                } 
+              />
+
+              <Route 
+                path='success' 
+                element={
+                  <ProtectedRouteGuard>
+                    <Success />
+                  </ProtectedRouteGuard>
+                } 
+              />
             </Routes>
           </Router>
         </UserProvider>
