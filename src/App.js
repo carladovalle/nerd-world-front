@@ -4,6 +4,7 @@ import Enroll from './pages/Enroll';
 import SignIn from './pages/SignIn';
 import Dashboard from './pages/Dashboard';
 import Home from './pages/Dashboard/Home';
+import { PrivatePage } from './pages/PrivatePage';
 import { Products } from './pages/Dashboard/Products/Products';
 import { ProductPage } from './pages/Dashboard/Products/ProductPage';
 import { Cart } from './pages/Dashboard/Cart/Cart';
@@ -11,8 +12,6 @@ import { Payment } from './pages/Dashboard/Payment/Payment';
 import { Success } from './pages/Dashboard/Success/Success';
 
 import { UserProvider } from './contexts/UserContext';
-
-import useToken from './hooks/useToken';
 
 export default function App() {
   return (
@@ -34,27 +33,27 @@ export default function App() {
               <Route 
                 path='cart' 
                 element={
-                  <ProtectedRouteGuard>
+                  <PrivatePage>
                     <Cart />
-                  </ProtectedRouteGuard>
+                  </PrivatePage>
                 } 
               />
 
               <Route 
                 path='payment' 
                 element={
-                  <ProtectedRouteGuard>
+                  <PrivatePage>
                     <Payment />
-                  </ProtectedRouteGuard>
+                  </PrivatePage>
                 } 
               />
 
               <Route 
                 path='success' 
                 element={
-                  <ProtectedRouteGuard>
+                  <PrivatePage>
                     <Success />
-                  </ProtectedRouteGuard>
+                  </PrivatePage>
                 } 
               />
             </Routes>
@@ -62,14 +61,4 @@ export default function App() {
         </UserProvider>
     </>
   );
-}
-
-function ProtectedRouteGuard({ children }) {
-  const token = useToken();
-
-  if (!token) {
-    return <Navigate to="/sign-in" />;
-  }
-
-  return <>{children}</>;
 }
