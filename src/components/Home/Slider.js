@@ -1,23 +1,23 @@
 import styled from 'styled-components';
 import { useState, useEffect, useRef } from 'react';
 
-import est from '../../assets/img/pant.webp';
-import dec from '../../assets/img/lu.webp';
-import pre from '../../assets/img/f.webp';
+import pantufa from '../../assets/img/pant.webp';
+import decoracao from '../../assets/img/decoracao.webp';
+import criativo from '../../assets/img/criativo.webp';
 
 export function Slider() {
   const images = 
   [
     {
-      'image': est,
+      'image': pantufa,
       'title': 'Produtos exclusivos'
     },
     {
-      'image': dec,
+      'image': decoracao,
       'title': 'Decore a sua casa'
     },
     {
-      'image': pre,
+      'image': criativo,
       'title': 'Presentes criativos'
     }
   ];   

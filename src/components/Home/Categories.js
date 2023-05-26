@@ -1,32 +1,80 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 import { useNavigate } from 'react-router-dom';
 
-import vest from '../../assets/img/harry.jpg';
-import dec from '../../assets/img/lum.webp';
-import pre from '../../assets/img/funko.webp';
-import coz from '../../assets/img/caneca.webp';
+import camisas from '../../assets/img/harry.jpg';
+import moletons from '../../assets/img/houseStark.webp';
+import pantufas from '../../assets/img/pantufa.jpeg';
+import almofadas from '../../assets/img/almofadas.webp';
+import luminarias from '../../assets/img/lum.webp';
+import quadros from '../../assets/img/quadro.webp';
+import diaMaes from '../../assets/img/presenteMae.webp';
+import diaPais from '../../assets/img/presentePai.webp';
+import presentesAmigos from '../../assets/img/funko.webp';
+import canecas from '../../assets/img/caneca.webp';
+import portaPipoca from '../../assets/img/portaPipoca.webp';
+import shot from '../../assets/img/shot.webp';
 
 const categories = [
   {
-    name: 'Vestuário',
-    image: vest,
+    name: 'Camisas',
+    image: camisas,
     id: 1
   },
   {
-    name: 'Decoração',
-    image: dec,
+    name: 'Moletons',
+    image: moletons,
     id: 2
   },
   {
-    name: 'Presentes',
-    image: pre,
+    name: 'Pantufas',
+    image: pantufas,
     id: 3
   },
   {
-    name: 'Cozinha',
-    image: coz,
+    name: 'Almofadas',
+    image: almofadas,
     id: 4
+  },
+  {
+    name: 'Luminárias',
+    image: luminarias,
+    id: 5
+  },
+  {
+    name: 'Quadros',
+    image: quadros,
+    id: 6
+  },
+  {
+    name: 'Dia das mães',
+    image: diaMaes,
+    id: 7
+  },
+  {
+    name: 'Dia dos pais',
+    image: diaPais,
+    id: 8
+  },
+  {
+    name: 'Presentes para Amigos',
+    image: presentesAmigos,
+    id: 9
+  },
+  {
+    name: 'Canecas',
+    image: canecas,
+    id: 10
+  },
+  {
+    name: 'Baldes de Pipoca',
+    image: portaPipoca,
+    id: 11
+  },
+  {
+    name: 'Copos de Shot',
+    image: shot,
+    id: 12
   }
 ];
 
@@ -81,7 +129,7 @@ const Container = styled.div`
 const Category = styled.div`
   width: 250px;
   height: 200px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   display: flex;
   justify-content: center;
   text-align: center;
