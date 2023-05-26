@@ -26,6 +26,7 @@ export default function App() {
               <Route path="/dashboard" element={<Dashboard />}>
                 <Route path="home" element={<Home />} />
                 <Route path="home/:typeId" element={<Products />} />
+                <Route path=":typeId" element={<Products />} />
                 <Route path=':typeId/:productId' element={<ProductPage/>} /> 
               </Route>
 

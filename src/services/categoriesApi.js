@@ -1,21 +1,11 @@
 import api from './api';
 
-export async function getCategories(token) {
-  const response = await api.get('/categories', {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
-  console.log(response.data);
+export async function getCategories() {
+  const response = await api.get('/categories');
   return response.data;
 }
 
-export async function getCategoryById(categoryId, token) {
-  const response = await api.get(`/categories/${categoryId}`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
-
+export async function getCategoryById(categoryId) {
+  const response = await api.get(`/categories/${categoryId}`);
   return response.data;
 }

@@ -9,7 +9,6 @@ export function BestSellers() {
 
   const [products, setProducts] = useState([]);
 
-
   const { getProducts } = useProducts();
 
   useEffect(async () => {

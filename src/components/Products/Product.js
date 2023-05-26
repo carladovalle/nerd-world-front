@@ -8,9 +8,10 @@ export default function Product({ index, id, product, name, image }) {
 
   return (
     <ProductPage>
-      <Container index={index} onClick={() => navigate(`/dashboard/home/product/${id}`, {state: { product: product }})}>
+      <Container index={index} onClick={() => navigate(`/dashboard/product/${id}`, {state: { product: product }})}>
         <img src={image} alt="product" />
         <div className="name">{name}</div>
+        usdusdh
       </Container>
     </ProductPage>
   );
