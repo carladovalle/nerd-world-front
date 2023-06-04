@@ -1,7 +1,15 @@
 import axios from 'axios';
 
-const instance = axios.create({
+export const api = axios.create({
   baseURL: process.env.REACT_APP_API_BASE_URL
 });
 
-export default instance;
+export function createHeaders() {
+  const auth = JSON.parse(localStorage.getItem('dashboard') || '');
+  const config = {
+    headers: {
+      Authorization: `Bearer ${auth.token}`
+    }
+  };
+  return config;
+}

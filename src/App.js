@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
-import Enroll from './pages/Enroll';
-import SignIn from './pages/SignIn';
+import Launch from './pages/Launch';
 import Dashboard from './pages/Dashboard';
 import Home from './pages/Dashboard/Home';
 import { PrivatePage } from './pages/PrivatePage';
@@ -19,8 +18,8 @@ export default function App() {
         <UserProvider>
           <Router>
             <Routes>
-              <Route path="/" element={<Enroll />} />
-              <Route path="/sign-in" element={<SignIn />} />
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/launch" element={<Launch />} />
 
               <Route path="/dashboard" element={<Dashboard />}>
                 <Route path="home" element={<Home />} />
@@ -28,7 +27,6 @@ export default function App() {
                 <Route path=":typeId" element={<Products />} />
                 <Route path=':typeId/:productId' element={<ProductPage/>} /> 
               </Route>
-
 
               <Route 
                 path='cart' 
