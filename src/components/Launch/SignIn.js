@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { useState, useContext } from 'react';
 
+import { GrGooglePlus } from 'react-icons/gr';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { auth } from '../../config/firebase';
+
 import UserContext from '../../contexts/UserContext';
 
 import useSignIn from '../../hooks/api/useSignIn';
@@ -30,6 +34,24 @@ export function SignIn ({ slide } ) {
     }
   } 
 
+  async function authSubmit(email) {
+    try {
+      const userData = await authSignIn(email);
+      setUserData(userData);
+      navigate('/dashboard/home');
+    } catch (error) {
+      alert(`${error.response.data.message}`);
+    }
+  }
+
+  async function handleGoogleSignIn() {
+    const provider = new GoogleAuthProvider();
+    const user = await signInWithPopup(auth, provider);
+    const email = user.user.email;
+
+    if (email) authSubmit(email);      
+  }
+
   return (
     <Wrapper slide = {slide}>
       <h1>Login</h1>
@@ -37,6 +59,7 @@ export function SignIn ({ slide } ) {
           <input label="E-mail" type="text" fullWidth value={email} onChange={e => setEmail(e.target.value)} />
           <input label="Senha" type="password" fullWidth value={password} onChange={e => setPassword(e.target.value)} />
           <Button type="submit" color="primary" fullWidth disabled={loadingSignIn}>Entrar</Button>
+          <AuthSignIn onClick={handleGoogleSignIn}>Entrar com <GrGooglePlus /></AuthSignIn>
         </form>
     </Wrapper>
   );
