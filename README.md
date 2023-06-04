@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Nerd World
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📑 Conteúdo
 
-## Available Scripts
+-   [Descrição do Projeto](#-descricao-projeto)
+-   [Como rodar a aplicação](#%EF%B8%8F-how-to-run)
+-   [Tecnologias](#%EF%B8%8F-build-with)
+-   [Contato](#-contato)
 
-In the project directory, you can run:
+## 📌 Descrição do Projeto
+<p align="justify">Nerd World é um ecommerce de produtos geeks, nerds, criativos e divertidos. 
+  
+Lugar perfeito para você comprar acessórios e produtos decorativos, e quem sabe, presentear aquela pessoa especial.
 
-### `npm start`
+Funcionalidades:
+- Cadastro e Login do usuário;
+- Listagem de todos os produtos, bem como o agrupamento desses em categorias e tipos;
+- Busca de produtos pela barra de pesquisa na página principal, viabilizada por meio de requisições através do banco de dados postgreSQL;
+- Página do produto;
+- Inclusão de produtos no carrinho de compras;
+- Checkout para finalização da compra, no qual são inseridos os dados pessoais/financeiros e o endereço de entrega; 
+- Ao fim, é exibida ao usuário a confirmação da compra.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Você pode acessar o repositório do back-end <a href="https://github.com/carladovalle/nerd-world-backend">aqui</a>.</p>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+PROJETO EM DESENVOLVIMENTO.
 
-### `npm test`
+## ⚙️ Como rodar a aplicação
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone o repositório do <a href="https://github.com/carladovalle/nerd-world-backend">back-end</a>.
+2. Clone este repositório.
+3. Instale as dependências:
+```bash
+npm i
+```
+3. Rode o front-end através do comando:
+```bash
+npm start
+```
+4. Rode o projeto:
+```bash
+npm start
+```
+5. Finalmente, acesse http://localhost:3000 no seu navegador favorito.
 
-### `npm run build`
+## 🛠️ Tecnologias
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img align="left" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
+<img align="left" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
+<img align="left" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+<img align="left" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
+<img align="left" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg">
+<img align="left" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg">
+<img align="left" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg">
+<img align="left" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-plain-wordmark.svg">
+<img align="left" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg">
+<img align="left" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain-wordmark.svg">
+<img align="left" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
+<img align="left" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" />
+<img align="left" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+</br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📫 Contato
 
-### `npm run eject`
+<div align="center">
+<img width= 200px src="https://avatars.githubusercontent.com/u/69774119?s=400&u=3e044818379a4a34965fed74a6df201694c5ec5f&v=4" alt=""/>
+  <p> <i><b>Carla Ferreira do Valle</i></b> </p>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<br /> <a href = "mailto:carlafdovalle@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+  <a href="https://www.linkedin.com/in/carlafvalle/" target="_blank"><img height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" target="_blank"></a> 
+</div>
