@@ -1,35 +1,32 @@
 import styled from 'styled-components';
-
 import { useState, useEffect } from 'react';
-
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '../../../contexts/CartContext';
 import { ProductCart } from '../../../components/Products/ProductCart';
 import { EmptyCart } from '../../../components/Cart/EmptyCart';
 
-import { getCarts } from '../../../services/cartsApi';
-
 export function Cart() {
 
-  const [data, setData] = useState([]);
+  const { cart } = useCart();
 
-  useEffect(() => {
-    const promise = getCarts();
-    promise.then((res => {
-      setData(res);
-    })).catch(()=>{
-      alert('An error occurred while trying to fetch the data, please refresh the page');
-    });
-  }, []);
-  //console.log(data.CartProducts[0].Products.name);
-  console.log(data);
+  const navigate = useNavigate();
 
-  /*if (cart === null || cart.length === 0) {
+  const total = cart?.reduce((total, product) => 
+    total + (product.amount * product.price), 0);
+
+  async function handleCheckout() {    
+    localStorage.setItem('cart', JSON.stringify(cart));        
+  
+    navigate('/payment');   
+  }
+
+  if (cart === null || cart.length === 0) {
     return (
       <Wrapper>
         <EmptyCart />
       </Wrapper>
     );
-  }*/
+  }
 
   return (
     <Wrapper>
@@ -37,8 +34,36 @@ export function Cart() {
 
       <Container>
         <ProductsContainer>
-            <ProductCart />
+          {
+            cart?.map(product => (
+              <ProductCart 
+                key={product.id} 
+                product={product}
+              />
+            ))
+          }
         </ProductsContainer>
+
+        <CheckoutSummary>
+          <h2>Order Summary</h2>
+          <div>
+            <h4>Subtotal</h4>
+            {
+              total? <p>${total/100}</p> : <p>0</p>
+            }
+          </div>
+          <div>
+            <h4>Shipping</h4>
+            <p>Free</p>
+          </div>          
+          <Total>
+            <h3>Total</h3>
+            {
+              total? <p>${total/100}</p> : <p>0</p>
+            }
+          </Total>
+          <button onClick={() => handleCheckout()}>CHECKOUT</button>
+        </CheckoutSummary>
       </Container>
       
     </Wrapper>
@@ -55,7 +80,7 @@ const Wrapper = styled.div`
   justify-content: center;
   background: #adb5bd;
   font-family: 'Raleway', sans-serif; 
-  color: #f8f9fa;
+  color: red;
   h1 {
     font-size: 2em;
     line-height: 3em;
@@ -82,10 +107,64 @@ const ProductsContainer = styled.div`
   width: 600px;
   padding: 20px;
   border-radius: 5px;
-  background-color: #f8f9fa;
+  background-color: pink;
   box-shadow: #f8f9fa;  
   
   @media (max-width: 850px) {
     width: auto;
+  }
+`;
+
+const CheckoutSummary = styled.div`
+  width: 300px;
+  height: 250px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #F5FAD1;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  h4 {
+    opacity: .7;
+  }
+
+  div {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  button {
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    color: #F5FAD1;
+    background-image: linear-gradient( to right, #083316, #76C352);
+    cursor: pointer; 
+    
+    &:hover {
+        opacity: .8;
+    }
+  }
+
+  @media (max-width: 850px) {
+    width: auto;
+  }
+`;
+
+const Total = styled.div`
+  border-top: 1px solid rgba(118, 195, 82, .5);
+
+  h3, p {
+    font-size: 18px;
+    font-weight: 500;
   }
 `;

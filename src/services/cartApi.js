@@ -6,6 +6,5 @@ export async function getCarts(token) {
       Authorization: `Bearer ${token}`,
     },
   });
-  console.log(response.data);
   return response.data;
 }

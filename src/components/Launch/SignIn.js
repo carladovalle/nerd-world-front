@@ -28,7 +28,7 @@ export function SignIn ({ slide } ) {
     try {
       const userData = await signIn(email, password);
       setUserData(userData);
-      navigate('/dashboard/home');
+      navigate('/cart');
     } catch (error) {
       console.log(error);
     }

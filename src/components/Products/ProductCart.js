@@ -1,20 +1,18 @@
 import styled from 'styled-components';
 
-export function ProductCart () {
-  
+export function ProductCart ({product}) {
+
   return (
-    <Wrapper>
+    <Wrapper key={product.id}>
       <div>
-        <img alt="" />
+        <img src={product.image} alt="" />
       </div>
       <InfoContainer>
         <Title>
-          <h3>nome do produto</h3>
-          <span>quantidade</span>
+          <h3>{product.name}</h3>
+          <span>Quantidade: {product.amount}</span>
         </Title>
-            
       </InfoContainer>
-              
     </Wrapper>
   );
 }

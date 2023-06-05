@@ -5,8 +5,8 @@ import { Navigate } from 'react-router-dom';
 function renderError() {
   localStorage.clear();
 
-  if (window.confirm('Please sign in to continue!')) {
-    return <Navigate to="/sign-in" />;
+  if (window.confirm('Faça login para continuar!')) {
+    return <Navigate to="/launch" />;
   } else {
     return <Navigate to="/home" />;
   }

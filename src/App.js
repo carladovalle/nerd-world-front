@@ -11,51 +11,48 @@ import { Payment } from './pages/Dashboard/Payment/Payment';
 import { Success } from './pages/Dashboard/Success/Success';
 
 import { UserProvider } from './contexts/UserContext';
+import { CartProvider } from './contexts/CartContext';
 
 export default function App() {
   return (
     <>
         <UserProvider>
-          <Router>
-            <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/launch" element={<Launch />} />
+          <CartProvider>
+            <Router>
+              <Routes>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/launch" element={<Launch />} />
 
-              <Route path="/dashboard" element={<Dashboard />}>
-                <Route path="home" element={<Home />} />
-                <Route path="home/:typeId" element={<Products />} />
-                <Route path=":typeId" element={<Products />} />
-                <Route path=':typeId/:productId' element={<ProductPage/>} /> 
-              </Route>
+                <Route path="/dashboard" element={<Dashboard />}>
+                  <Route path="home" element={<Home />} />
+                  <Route path="home/:typeId" element={<Products />} />
+                  <Route path=":typeId" element={<Products />} />
+                  <Route path=':typeId/:productId' element={<ProductPage/>} /> 
+                </Route>
 
-              <Route 
-                path='cart' 
-                element={
-                  <PrivatePage>
-                    <Cart />
-                  </PrivatePage>
-                } 
-              />
+                <Route 
+                  path='cart' 
+                  element={
+                      <Cart />
+                  } 
+                />
 
-              <Route 
-                path='payment' 
-                element={
-                  <PrivatePage>
-                    <Payment />
-                  </PrivatePage>
-                } 
-              />
+                <Route 
+                  path='payment' 
+                  element={
+                      <Payment />
+                  } 
+                />
 
-              <Route 
-                path='success' 
-                element={
-                  <PrivatePage>
-                    <Success />
-                  </PrivatePage>
-                } 
-              />
-            </Routes>
-          </Router>
+                <Route 
+                  path='success' 
+                  element={
+                      <Success />
+                  } 
+                />
+              </Routes>
+            </Router>
+          </CartProvider>
         </UserProvider>
     </>
   );
