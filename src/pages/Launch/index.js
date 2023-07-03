@@ -41,7 +41,7 @@ const Wrapper = styled.div`
   display: flex;
   font-family: 'Raleway', sans-serif;
   
-  background-color: pink;
+  background-image: url('https://picstatio.com/large/a44108/poster-movie-Star-Wars-The-Last-Jedi.jpg');
   background-position: center;
   background-size: cover;
 
@@ -49,7 +49,7 @@ const Wrapper = styled.div`
     width: 100vw;
     text-align: center;
     font-size: 14px;
-    color: #FFF;
+    color: #495057;
     cursor: pointer;
 
     position: fixed;
@@ -69,7 +69,7 @@ const Wrapper = styled.div`
 const SlipContainer = styled.div`
   width: 50vw;
   height: 100vh;
-  background-color: rgba(12, 12, 12, .8);
+  background-color: rgba(12, 12, 12, .4);
   transition: all 0.4s;
 
   position: fixed;
@@ -90,7 +90,7 @@ const Button = styled.button`
   color: #F5FAD1;
   border: none;
   transition: all 0.4s;
-  background-image: linear-gradient( to right, #083316, #76C352);
+  background-image: linear-gradient( to right, #6c757d, #e9ecef);
   cursor: pointer;    
 
   position: fixed;

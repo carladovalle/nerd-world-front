@@ -126,7 +126,7 @@ export function PersonalInformationForm () {
             />
           </InputWrapper>
           
-          <InputWrapper className='half-box'>
+          <InputWrapper className='full-box'>
             <InputMsk
               type="text" 
               name="cpf"
@@ -137,7 +137,7 @@ export function PersonalInformationForm () {
             />
           </InputWrapper>
 
-          <InputWrapper className='half-box'>
+          <InputWrapper className='full-box'>
             <InputWrapper 
               name="birthday"
               error={false}
@@ -282,6 +282,8 @@ const InputWrapper = styled.div`
   padding: 5px;
   display: flex;
   align-items:center;
+  width: 50px;
+  height: 50px;
 `;
 
 const Input = styled.input`
@@ -291,11 +293,11 @@ const Input = styled.input`
   outline: none;
   border: none;
   border-radius: 5px;
-  border-bottom: 2px solid #f8f9fa;
+  border-bottom: 2px solid pink;
   background: none;
   font-size: 16px;
   :focus {
-    border-color: #495057;
+    border-color: red;
   }
 `;
 

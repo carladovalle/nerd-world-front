@@ -103,7 +103,7 @@ const Wrapper = styled.div`
         border: none;
         background: none;
         color:  #F5FAD1;
-        border-bottom: 2px solid #76C352;
+        border-bottom: 2px solid #6c757d;
     }
 
     label, span {
@@ -131,7 +131,7 @@ const Button = styled.button`
   font-weight: 500;
   border: none;
   color: #F5FAD1;
-  background-image: linear-gradient( to right, #083316, #76C352);
+  background-image: linear-gradient( to right, #6c757d, #e9ecef);
   cursor: pointer; 
   
   &:hover {
@@ -149,7 +149,7 @@ const AuthSignIn = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #76C352;
+  border: 1px solid #6c757d;
   color: #F5FAD1;
   background: none;
   cursor: pointer; 
